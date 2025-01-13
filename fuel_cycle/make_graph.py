@@ -76,8 +76,8 @@ for tbr_index, tbr in enumerate(tbrs):
         yshift=10,
     )
 
-fig.update_xaxes(range=[0, 20], title="Time")
-fig.update_yaxes(range=[0, 7], title="Inventory")
+fig.update_xaxes(range=[0, 20], title="Time (AU)")
+fig.update_yaxes(range=[0, 7], title="Tritium Inventory (AU)")
 
 # Make initial traces visible
 for i, _ in enumerate(system.boxes):
@@ -105,9 +105,11 @@ for tbr_index, tbr in enumerate(tbrs):
 sliders = [
     dict(active=0, currentvalue={"prefix": "TBR: "}, pad={"t": 50}, steps=steps_tbr),
 ]
-
 fig.update_layout(sliders=sliders)
 
-# export to html
-fig.write_html("index.html")
+template = "plotly_dark"
+for template in ["plotly_dark", "plotly", "plotly_white"]:
+    fig.update_layout(template=template)
+    # export to html
+    fig.write_html(f"fuel_cycle_{template}.html")
 fig.show()
