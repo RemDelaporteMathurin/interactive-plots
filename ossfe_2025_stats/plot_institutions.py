@@ -73,7 +73,7 @@ def get_continent(country_name):
         continent_name = pc.convert_continent_code_to_continent_name(continent_code)
         return continent_name
     except:
-        return "Unknown"
+        raise ValueError(f"Country name {country_name} not found")
 
 
 # Add continent column
