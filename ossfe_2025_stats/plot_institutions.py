@@ -34,6 +34,8 @@ def lookup_country(name: str, *, allow_fuzzy: bool = False) -> str | None:
         name = "Russian Federation"
     elif name == "The Netherlands":
         name = "Netherlands"
+    elif name == "USA and UK":
+        name = "United States"
 
     if country := pycountry.countries.get(name=name):
         return country.name
