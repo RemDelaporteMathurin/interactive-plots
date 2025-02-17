@@ -35,7 +35,7 @@ def lookup_country(name: str, *, allow_fuzzy: bool = False) -> str | None:
     elif name == "The Netherlands":
         name = "Netherlands"
     elif name == "USA and UK":
-        name = "United States"
+        name = "United Kingdom"
 
     if country := pycountry.countries.get(name=name):
         return country.name
@@ -107,6 +107,11 @@ institution_map = {
     "University of Rochester Laboratory for Laser Energetics": "University of Rochester",
     "Politecnico of Turin": "Politecnico di Torino",
     "Oak Ridge National Laboratory": "ORNL",
+    "Thales": "Gen-F",
+    "GenF": "Gen-F",
+    "ITER-FRANCE": "ITER Organization",
+    "Woodruff Scientific": "Woodruff Scientific Ltd",
+    "Lawrence Berkeley National Laboratory": "LBNL",
 }
 
 # remove all trailing whitespaces from institutions
