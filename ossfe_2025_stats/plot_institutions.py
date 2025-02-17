@@ -102,6 +102,7 @@ institution_map = {
     "General Fusion": "General Fusion Inc.",
     "MIT PSFC": "Massachusetts Institute of Technology",
     "ntTau Digital": "nTtau Digital LTD",
+    "nTtau Digital": "nTtau Digital LTD",
     "Proxima Fusion GmbH": "Proxima Fusion",
     "University of York Plasma Institute": "University of York",
     "University of Rochester Laboratory for Laser Energetics": "University of Rochester",
@@ -112,6 +113,7 @@ institution_map = {
     "ITER-FRANCE": "ITER Organization",
     "Woodruff Scientific": "Woodruff Scientific Ltd",
     "Lawrence Berkeley National Laboratory": "LBNL",
+    "IDOM UK": "IDOM UK Ltd",
 }
 
 # remove all trailing whitespaces from institutions
