@@ -146,6 +146,7 @@ fig = px.treemap(
 
 
 fig.update_traces(texttemplate="%{label} %{customdata[0]}")  # Show label and count
+fig.update_layout(font=dict(family="Coolvetica", color="black"))
 # export to html
 fig.write_html("output.html")
 fig.show()
