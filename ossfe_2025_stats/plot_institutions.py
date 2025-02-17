@@ -91,6 +91,7 @@ institution_map = {
     "HI Iberia": "HI IBERIA",
     "HI-Iberia, University Carlos II, Gregorio Millán Barbany Institute": "HI IBERIA",
     "ATG Engineering S.L": "ATG Engineering S.L.",
+    "ATG Europe": "ATG Engineering S.L.",
     "VTT Research Center of Finland": "VTT Technical Research Centre",
     "VTT Technical Research Centre of Finland Ltd": "VTT Technical Research Centre",
     "VTT Technical Research Centre of Finland Ltd.": "VTT Technical Research Centre",
@@ -104,6 +105,8 @@ institution_map = {
     "Proxima Fusion GmbH": "Proxima Fusion",
     "University of York Plasma Institute": "University of York",
     "University of Rochester Laboratory for Laser Energetics": "University of Rochester",
+    "Politecnico of Turin": "Politecnico di Torino",
+    "Oak Ridge National Laboratory": "ORNL",
 }
 
 # remove all trailing whitespaces from institutions
