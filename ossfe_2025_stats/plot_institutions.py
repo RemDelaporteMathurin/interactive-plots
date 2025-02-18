@@ -114,6 +114,7 @@ institution_map = {
     "Woodruff Scientific": "Woodruff Scientific Ltd",
     "Lawrence Berkeley National Laboratory": "LBNL",
     "IDOM UK": "IDOM UK Ltd",
+    "Flatiron institute": "Flatiron Institute",
 }
 
 # remove all trailing whitespaces from institutions
