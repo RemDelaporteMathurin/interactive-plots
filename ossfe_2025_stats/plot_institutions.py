@@ -30,12 +30,18 @@ def lookup_country(name: str, *, allow_fuzzy: bool = False) -> str | None:
     # Handle special cases
     if name == "UK":
         name = "United Kingdom"
+    if name == "Cheshire":
+        name = "United Kingdom"
+    if name == "England":
+        name = "United Kingdom"
     elif name == "Russia":
         name = "Russian Federation"
     elif name == "The Netherlands":
         name = "Netherlands"
     elif name == "USA and UK":
         name = "United Kingdom"
+    elif name == "United States America":
+        name = "United States"
 
     if country := pycountry.countries.get(name=name):
         return country.name
@@ -103,6 +109,7 @@ institution_map = {
     "MIT PSFC": "Massachusetts Institute of Technology",
     "ntTau Digital": "nTtau Digital LTD",
     "nTtau Digital": "nTtau Digital LTD",
+    "nTtau Digital Ltd": "nTtau Digital LTD",
     "Proxima Fusion GmbH": "Proxima Fusion",
     "University of York Plasma Institute": "University of York",
     "University of Rochester Laboratory for Laser Energetics": "University of Rochester",
