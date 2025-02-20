@@ -124,6 +124,7 @@ institution_map = {
     "Flatiron institute": "Flatiron Institute",
     "Commonwealth Fusion Systems": "CFS",
     "Fusion for energy": "Fusion for Energy",
+    "Fusion For Energy": "Fusion for Energy",
 }
 
 # remove all trailing whitespaces from institutions
