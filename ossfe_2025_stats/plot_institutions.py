@@ -125,6 +125,9 @@ institution_map = {
     "Commonwealth Fusion Systems": "CFS",
     "Fusion for energy": "Fusion for Energy",
     "Fusion For Energy": "Fusion for Energy",
+    "F4E": "Fusion for Energy",
+    "DTU - Technical University of Denmark": "DTU",
+    "Next Step Fusion s.a.r.l.": "Next Step Fusion",
 }
 
 # remove all trailing whitespaces from institutions
@@ -170,4 +173,35 @@ fig.update_traces(texttemplate="%{label} %{customdata[0]}")  # Show label and co
 fig.update_layout(font=dict(family="Coolvetica", color="black"))
 # export to html
 fig.write_html("output.html")
+fig.show()
+
+
+# Create a bubble chart on a map
+
+
+# count by country and not institution
+df2 = df.groupby(["Continent", "Country"]).size().reset_index(name="count")
+df2["color"] = df2["Continent"].map(color_map)
+
+fig = px.scatter_geo(
+    df2,
+    locations="Country",
+    locationmode="country names",
+    size="count",
+    hover_name="Country",
+    hover_data={"count": True, "Country": False},
+    projection="natural earth",
+    title="Registrations per Country",
+    size_max=50,
+)
+
+# Update layout for better visualization
+fig.update_layout(
+    title="Registrations per Country",
+    geo=dict(showframe=False, showcoastlines=True),
+    font=dict(family="Coolvetica", color="black"),
+)
+
+# Export to HTML and show the plot
+fig.write_html("bubble_map_output.html")
 fig.show()
