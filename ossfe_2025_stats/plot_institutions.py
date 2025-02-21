@@ -121,6 +121,7 @@ institution_map = {
     "Woodruff Scientific": "Woodruff Scientific Ltd",
     "Lawrence Berkeley National Laboratory": "LBNL",
     "IDOM UK": "IDOM UK Ltd",
+    "IDOM Nuclear Services": "IDOM",
     "Flatiron institute": "Flatiron Institute",
     "Commonwealth Fusion Systems": "CFS",
     "Fusion for energy": "Fusion for Energy",
