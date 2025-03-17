@@ -110,6 +110,7 @@ institution_map = {
     "ntTau Digital": "nTtau Digital LTD",
     "nTtau Digital": "nTtau Digital LTD",
     "nTtau Digital Ltd": "nTtau Digital LTD",
+    "nTtau Digital/Extreme Materials": "nTtau Digital LTD",
     "Proxima Fusion GmbH": "Proxima Fusion",
     "University of York Plasma Institute": "University of York",
     "University of Rochester Laboratory for Laser Energetics": "University of Rochester",
@@ -129,6 +130,9 @@ institution_map = {
     "F4E": "Fusion for Energy",
     "DTU - Technical University of Denmark": "DTU",
     "Next Step Fusion s.a.r.l.": "Next Step Fusion",
+    "Polytechnic of Turin": "Politecnico di Torino",
+    "Eindhoven University of Technology (TU/e)": "Eindhoven University of Technology",
+    "Phd in nuclear physics (2007), currently a tech entrepreneur": "Others",
 }
 
 # remove all trailing whitespaces from institutions
@@ -174,7 +178,7 @@ fig.update_traces(texttemplate="%{label} %{customdata[0]}")  # Show label and co
 fig.update_layout(font=dict(family="Coolvetica", color="black"))
 # export to html
 fig.write_html("output.html")
-fig.show()
+# fig.show()
 
 
 # Create a bubble chart on a map
@@ -183,6 +187,9 @@ fig.show()
 # count by country and not institution
 df2 = df.groupby(["Continent", "Country"]).size().reset_index(name="count")
 df2["color"] = df2["Continent"].map(color_map)
+
+# print where country is singapore
+
 
 fig = px.scatter_geo(
     df2,
@@ -202,6 +209,7 @@ fig.update_layout(
     geo=dict(showframe=False, showcoastlines=True),
     font=dict(family="Coolvetica", color="black"),
 )
+fig.update_layout({"geo": {"resolution": 50}})
 
 # Export to HTML and show the plot
 fig.write_html("bubble_map_output.html")
