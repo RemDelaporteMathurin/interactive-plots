@@ -171,12 +171,18 @@ fig = px.treemap(
     custom_data=df[["count"]],  # Add custom data for the count
     hover_data={"count": ":.0f"},  # Format the count
     labels={"count": "Registrations"},
+    # maxdepth=2,  # uncomment to limit depth
 )
 
 
-fig.update_traces(texttemplate="%{label} %{customdata[0]}")  # Show label and count
+fig.update_traces(
+    texttemplate="%{label} %{customdata[0]}",
+    marker=dict(cornerradius=5),
+)  # Show label and count
 fig.update_layout(font=dict(family="Coolvetica", color="black"))
 # export to html
+# print nb unique institutions
+print(f"Number of unique institutions: {df['Institution'].nunique()}")
 fig.write_html("output.html")
 # fig.show()
 
